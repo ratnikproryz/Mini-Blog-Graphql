@@ -13,10 +13,14 @@
 </div>
 <p>
 Lighthouse is a GraphQL framework that integrates with your Laravel application.
-It takes the best ideas of both and combines them to solve common tasks with ease
-Github: https://github.com/nuwave/lighthouse
+
+It takes the best ideas of both and combines them to solve common tasks with ease.
+
+Github: https://github.com/nuwave/lighthouse.
+
 The documentation lives at lighthouse-php.com.
-Install via composer: composer require nuwave/lighthouse
+
+Install via composer: composer require nuwave/lighthouse.
 </p>
 
 
