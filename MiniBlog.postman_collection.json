@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "98d3e781-c114-405c-811e-c3d9490cc1f0",
+		"name": "MiniBlog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16914584"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "get all users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/graphql",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n  users {\r\n    id\r\n    name\r\n    avatar\r\n    email\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/graphql",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n  updateUser (\r\n      id: 8\r\n    avatar: \"Le_Dinh_An.jpg\"\r\n    email: \"ledinhanh@gmail.com\"\r\n  ){\r\n      id\r\n      name\r\n      avatar\r\n      email\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/graphql",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n  createUser (\r\n    name: \"Le Van Anh\"\r\n    avatar: \"Le_Van_Anh.jpg\"\r\n    email: \"levananh@gmail.com\"\r\n  ){\r\n      id\r\n      name\r\n      avatar\r\n      email\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user detail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    user(id:\"5\"){\r\n        id\r\n        name\r\n        avatar\r\n        email\r\n        posts{\r\n            id\r\n            title\r\n            description\r\n        }\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "get all posts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    posts{\r\n        id\r\n        title\r\n        description\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get post detail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    post(id: \"10\"){\r\n        id\r\n        title\r\n        description\r\n        user{\r\n            id\r\n            name\r\n        }\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n    createPost(\r\n        title: \"Hello world, I'm using Graphql\"\r\n        description: \"GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data\"\r\n        user_id: 1\r\n    ){\r\n        id\r\n        title\r\n        description\r\n        user_id\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n    updatePost(\r\n        id:11 ,\r\n        description: \"GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data\"\r\n    ){\r\n        id\r\n        title\r\n        description\r\n        user_id\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
