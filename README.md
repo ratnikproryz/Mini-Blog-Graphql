@@ -1,3 +1,24 @@
+<div align="center">
+  <a href="https://www.lighthouse-php.com">
+    <img src="./logo.png" alt=lighthouse-logo" width="150" height="150">
+  </a>
+</div>
+
+<div align="center">
+
+# Lighthouse
+
+**A framework for serving GraphQL from Laravel**
+
+</div>
+
+Lighthouse is a GraphQL framework that integrates with your Laravel application.
+It takes the best ideas of both and combines them to solve common tasks with ease
+Github: https://github.com/nuwave/lighthouse
+The documentation lives at lighthouse-php.com.
+Install via composer: composer require nuwave/lighthouse
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

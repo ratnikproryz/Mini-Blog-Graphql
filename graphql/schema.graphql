@@ -3,23 +3,17 @@ scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date
 
 "Indicates what fields are available at the top level of a query operation."
 type Query {
-    "Find a single user by an identifying attribute."
+
     user(
       id: ID @eq @rules(apply: ["prohibits:email", "required_without:email"])
       email: String @eq @rules(apply: ["prohibits:id", "required_without:id", "email"])
     ): User @find
-    
-    "List all users."
     users: [User!]! @all
 
-    post(
-        id: ID @eq
-    ):Post @find
-
+    post(id: ID @eq):Post @find
     posts: [Post!]! @all
 }
 
-"Account of a person who utilizes this application."
 type User {
     id: ID!
     name: String!
@@ -55,8 +49,11 @@ type Mutation {
         email: String @eq
     ):User @update
 
-    createPost(title:String!, description:String!, user_id: ID!): Post @create
+    deleteUser(id: ID!): User @delete
 
+    createPost(title:String!, description:String!, user_id: ID!): Post @create
     updatePost(id: ID!, title:String, description:String, user_id: ID): Post @update
+    deletePost(id: ID!): Post @delete
+
 }
 
